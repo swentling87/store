@@ -1,0 +1,57 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.page-header h1 {
+  padding-left: 150px;
+  color: gray;
+}
+.main {
+  background-image: url(asset-path('store-main.jpeg'));
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+  height: 600px;
+  width: 100%;
+}
+.main h1 {
+  padding-left: 150px;
+  font-size: 12em;
+}
+.main h2 {
+  font-size: 2em;
+}
+.main h3 {
+
+}
+.tabs {
+  color: gray;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  height:200px;
+  border: 4px;
+  border-style: solid;
+  border-color: gray;
+  text-align: center;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+}
+
+.header-link {
+  text-decoration: none;
+  color: gray;
+}
+.secondary {
+  background-image: url(asset-path('store-secondary.jpeg'));
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+}
+.panel {
+  color: black;
+  margin-top: 6em;
+  text-align: center;
+}
