@@ -17,6 +17,7 @@
   padding-left: 150px;
   font-size: 12em;
 }
+
 .main h2 {
   font-size: 2em;
 }
@@ -33,10 +34,22 @@
   border-color: gray;
   text-align: center;
 }
-
+.tabs-enter {
+  background-color: gray;
+  color: white;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  height:200px;
+  text-align: center;
+}
 .links {
   text-decoration: none;
   color: white;
+}
+.links-big {
+  text-decoration: none;
+  color: white;
+  font-size: 200%;
 }
 
 .header-link {
@@ -51,7 +64,17 @@
   width: 100%;
 }
 .panel {
-  color: black;
+  color: gray;
   margin-top: 6em;
   text-align: center;
+}
+.side-bar {
+  color: gray;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  height:200px;
+  border-right: 2px;
+  border-right-style: solid;
+  border-right-color: gray;
+  text-align: right;
 }
