@@ -1,0 +1,27 @@
+.page-header
+  %h1
+    =link_to "The Store", root_path, class: "header-link"
+.row
+  .col-md-1.col-md-offset-1.side-bar
+    <br>
+    .div
+      =link_to "Main", root_path, class: "side-bar-link"
+    .div
+      =link_to "Shop", products_path, class: "side-bar-link"
+    .div
+      =link_to "About Us", welcome_about_path, class: "side-bar-link"
+  .col-md-9.col-md-offset-1
+    <br>
+    .div.products
+      %h1 Our Products (#{@products.count})
+      .ul
+      -@products.each do |product|
+        =link_to product_path(product.id) do
+          .li.thumbnail
+            =image_tag "#{product.img}", class: "product-image"
+            .div
+              #{product.name}
+            .div
+              %small Category: #{product.category}
+            .div
+              $#{product.price}

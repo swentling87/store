@@ -3,9 +3,13 @@
     =link_to "The Store", root_path, class: "header-link"
 .row
   .col-md-1.col-md-offset-1.side-bar
+    <br>
     .div
-      <br>
-      =link_to "The Store", root_path, class: "header-link"
+      =link_to "Main", root_path, class: "side-bar-link"
+    .div
+      =link_to "Shop", products_path, class: "side-bar-link"
+    .div
+      =link_to "About Us", welcome_about_path, class: "side-bar-link"
   .col-md-4.col-md-offset-1
     <br>
     .div.about
