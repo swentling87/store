@@ -1,0 +1,33 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.thumbnail {
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin: 5px;
+  display: inline-block;
+  float: left;
+}
+.product-image {
+  height: 150px;
+  width: 150px;
+}
+.thumbnail-shadow {
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin: 5px;
+  display: inline-block;
+  float: left;
+  box-shadow: 10px 10px;
+}
+.side-bar-link-big {
+  text-decoration: none;
+  color: gray;
+  font-size: 200%;
+}
+.product-description {
+  margin-top: 75px;
+  text-align: left;
+}

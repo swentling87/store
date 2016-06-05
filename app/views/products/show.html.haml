@@ -1,0 +1,27 @@
+.page-header
+  %h1
+    =link_to "The Store", root_path, class: "header-link"
+.row
+  .col-md-6.col-md-offset-3
+    %h1
+      #{@product.name}
+      %small
+        $#{@product.price}
+        =link_to "Back", products_path, class: "btn btn-primary btn-xs"
+.row
+  .col-md-1.col-md-offset-1.side-bar
+    <br>
+    .div
+      =link_to "Main", root_path, class: "side-bar-link"
+    .div
+      =link_to "Shop", products_path, class: "side-bar-link"
+    .div
+      =link_to "About Us", welcome_about_path, class: "side-bar-link"
+  .col-md-3.col-md-offset-1
+    <br>
+    .div.product-details
+      =image_tag @product.img
+  .col-md-3
+    .span.product-description
+      %h1 Description
+      %h3 #{@product.description}
