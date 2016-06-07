@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
   root 'welcome#welcome'
 
   get 'welcome/about'
 
   resources :products, only: [:index, :show]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+  resources :orders, only: [:create, :new]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

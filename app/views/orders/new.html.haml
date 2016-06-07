@@ -1,0 +1,32 @@
+.page-header
+  %h1
+    =link_to "The Store", root_path, class: "header-link"
+.row
+  .col-md-6.col-md-offset-2
+    %h1
+      Checkout
+      =link_to "Back to Cart", cart_path, class: "btn btn-primary btn-xs"
+.row
+  .col-md-1.col-md-offset-1.side-bar
+    <br>
+    .div
+      =link_to "Main", root_path, class: "side-bar-link"
+    .div
+      =link_to "Shop", products_path, class: "side-bar-link"
+    .div
+      =link_to "About Us", welcome_about_path, class: "side-bar-link"
+  .col-md-2.well.order-form
+    =form_for @order do |order|
+      =order.label :name
+      =order.text_field :name, class: "form-control"
+      =order.label :email
+      =order.text_field :email, class: "form-control"
+      =order.label :zipcode
+      =order.text_field :zipcode, class: "form-control"
+      =order.hidden_field :total, value: number_with_precision(current_order.subtotal, precision: 2).to_f
+      =order.hidden_field :order_placed, value: true
+      .h4 Total: #{number_to_currency current_order.subtotal}
+      .div.order-form-2
+        =order.submit "Submit Order"
+  .col-md-6
+    =image_tag("store-sold.jpg", class: "checkout-image")

@@ -8,6 +8,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <div class="container">
+    <div class="flash">
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash.now[:alert] %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash.now[:alert] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-warning">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+  <%= link_to "Shopping Cart", cart_path, class: "btn btn-success pull-right" %>
+
 
 <%= yield %>
 

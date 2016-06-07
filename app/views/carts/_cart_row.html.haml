@@ -1,0 +1,19 @@
+.div.well
+  .row
+    .col-xs-8
+      .h4
+        =link_to "#{product.name}", product_path(product.id)
+    .col-xs-4.text-right
+      .h5 Unit Price: $#{order_item.unit_price}
+  .row
+    = form_for order_item, remote: true do |f|
+      .div
+        .col-xs-2.col-xs-offset-10.cart-form
+          =f.number_field :quantity, value: "#{order_item.quantity.to_i}", class: "form-control", min: 1
+          =f.hidden_field :product_id, value: product.id
+      .div
+        .col-xs-4.col-xs-offset-8.text-right
+          = f.submit "Update Quantity", class: "btn btn-primary btn-xs"
+          =link_to "Delete", order_item, {data: {confirm: "Are you sure you want to remove this from your cart?"}, method: :delete, remote: true, class: "btn btn-danger btn-xs"}
+  .h4.text-right
+    Total Price: $#{order_item.total_price}

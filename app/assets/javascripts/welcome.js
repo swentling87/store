@@ -25,6 +25,12 @@ ready = function() {
     $(this).addClass("thumbnail-shadow")});
   $(".thumbnail").mouseleave(function() {
     $(this).removeClass("thumbnail-shadow")});
+
+  $(".close").click(function() {
+    $(".flash").hide()});
+
+  $(".add").click(function() {
+    $(".add").hide()});
 };
 
 $(document).ready(ready);

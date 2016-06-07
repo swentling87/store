@@ -25,3 +25,12 @@
     .span.product-description
       %h1 Description
       %h3 #{@product.description}
+    .div
+    -if current_order.order_items.where(product_id: @product.id) != []
+    -else
+      =form_for @order_item, remote: true do |f|
+        .div.input-group.add
+          =f.number_field :quantity, value: 1, class: "form-control", min: 1
+          .div.input-group-btn
+            =f.hidden_field :product_id, value: @product.id
+            =f.submit "Add to Cart", class: "btn btn-primary add"
