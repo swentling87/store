@@ -10,5 +10,10 @@
 end
 products = Product.all
 
+50.times do
+  Review.create!(body: Faker::Hipster.sentence, name: Faker::Name.name, rating: Faker::Number.between(1,5), product: products.sample)
+end
+
 puts "Seed finished"
 puts "#{Product.count} products created."
+puts "#{Review.count} reviews created."

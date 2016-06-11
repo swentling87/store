@@ -30,7 +30,13 @@ ready = function() {
     $(".flash").hide()});
 
   $(".add").click(function() {
-    $(".add").hide()});
+    $(".add").hide()
+    $(".num-add").hide()});
+
+  $(".add-review").click(function(e) {
+  $(".review-form").show();
+    e.preventDefault();});
+
 };
 
 $(document).ready(ready);
