@@ -23,14 +23,26 @@
       =image_tag @product.img
   .col-md-3
     .span.product-description
-      %h1 Description
+      %h1
+        Description
+        %small Average Rating: #{avg_rating}
       %h3 #{@product.description}
     .div
     -if current_order.order_items.where(product_id: @product.id) != []
     -else
       =form_for @order_item, remote: true do |f|
-        .div.input-group.add
-          =f.number_field :quantity, value: 1, class: "form-control", min: 1
+        .div.input-group
+          =f.number_field :quantity, value: 1, class: "form-control num-add", min: 1
           .div.input-group-btn
             =f.hidden_field :product_id, value: @product.id
             =f.submit "Add to Cart", class: "btn btn-primary add"
+.row
+  .col-md-6.col-md-offset-3
+    .h1
+      Reviews
+      =link_to "Add A Review", "", class: "btn btn-primary btn-xs add-review"
+    .div.review-form
+      =render "reviews/form", product: @product, review: Review.new
+    <br>
+    .div.reviews
+      =render @product.reviews

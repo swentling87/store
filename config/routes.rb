@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:create]
+  end
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :orders, only: [:create, :new]

@@ -1,0 +1,20 @@
+=form_for [product, review] do |review|
+  .div.form-group
+    = review.label :rating
+    <br>
+    = review.label :one
+    = review.radio_button :rating, "1"
+    = review.label :two
+    = review.radio_button :rating, "2"
+    = review.label :three
+    = review.radio_button :rating, "3"
+    = review.label :four
+    = review.radio_button :rating, "4"
+    = review.label :five
+    = review.radio_button :rating, "5"
+  =review.label :name
+  =review.text_field :name, class: "form-control"
+  =review.label :body
+  =review.text_area :body, class: "form-control"
+  <br>
+  =review.submit "Submit"
